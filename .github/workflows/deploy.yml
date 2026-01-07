@@ -17,15 +17,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Fix patches directory issue
-        run: |
-          if [ -f patches ]; then rm patches; fi
-          mkdir -p patches
-          # 필요한 패치 파일이 있다면 여기서 생성하거나 복구할 수 있습니다.
-          # 현재는 디렉토리 구조만 정상화합니다.
-
       - name: Install pnpm
         uses: pnpm/action-setup@v4
+        with:
+          version: 9
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -37,7 +32,7 @@ jobs:
         run: pnpm install --no-frozen-lockfile
 
       - name: Build
-        run: pnpm build
+        run: pnpm vite build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
