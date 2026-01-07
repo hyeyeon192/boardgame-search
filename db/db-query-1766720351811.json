@@ -1,0 +1,9 @@
+{
+  "query": "ALTER TABLE board_games ADD COLUMN themes JSON AFTER mechanics;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2h5ELfXAootk2p9.root --database R8tcKpGSrXTCzn2AVYh77s --execute ALTER TABLE board_games ADD COLUMN themes JSON AFTER mechanics;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 5681
+}

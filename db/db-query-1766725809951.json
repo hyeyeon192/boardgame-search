@@ -1,0 +1,9 @@
+{
+  "query": "UPDATE board_games SET mechanics = '[]', themes = '[]' WHERE mechanics IS NULL OR themes IS NULL;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2h5ELfXAootk2p9.root --database R8tcKpGSrXTCzn2AVYh77s --execute UPDATE board_games SET mechanics = '[]', themes = '[]' WHERE mechanics IS NULL OR themes IS NULL;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 2842
+}
