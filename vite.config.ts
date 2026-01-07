@@ -5,6 +5,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   base: '/boardgame-search/',
   plugins: [react(), tailwindcss()],
+  publicDir: false,
   build: {
     outDir: 'dist',
     emptyOutDir: true,
