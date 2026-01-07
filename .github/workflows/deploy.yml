@@ -1,16 +1,22 @@
 name: Deploy to GitHub Pages
 
 
+
+
 on:
   push:
     branches: [master, main]
   workflow_dispatch:
 
 
+
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
+
 
 
 jobs:
@@ -21,12 +27,18 @@ jobs:
         uses: actions/checkout@v4
 
 
+
+
       - name: Remove patches folder
         run: rm -rf patches
 
 
+
+
       - name: Install pnpm
         uses: pnpm/action-setup@v4
+
+
 
 
       - name: Set up Node
@@ -36,22 +48,32 @@ jobs:
           # cache: 'pnpm'
 
 
+
+
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile --ignore-scripts
+        run: pnpm install --ignore-scripts
+
+
 
 
       - name: Build
         run: pnpm vite build
 
 
+
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
+
 
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
+
+
 
 
   deploy:
